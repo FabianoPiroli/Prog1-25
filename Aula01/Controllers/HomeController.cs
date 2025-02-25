@@ -15,7 +15,9 @@ namespace Aula01.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            Variaveis minhaVariavel = new Variaveis();
+
+            return View(minhaVariavel);
         }
 
         public IActionResult Privacy()
