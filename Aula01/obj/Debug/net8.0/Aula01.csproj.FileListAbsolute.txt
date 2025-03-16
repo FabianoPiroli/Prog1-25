@@ -32,3 +32,4 @@ C:\Users\fabip\OneDrive\Documentos\Ciências da Computação\3 Fase\Programacao 
 C:\Users\fabip\OneDrive\Documentos\Ciências da Computação\3 Fase\Programacao I\Atividades\Aula01\Aula01\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\fabip\OneDrive\Documentos\Ciências da Computação\3 Fase\Programacao I\Atividades\Aula01\Aula01\obj\Debug\net8.0\staticwebassets\msbuild.Aula01.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\fabip\OneDrive\Documentos\Ciências da Computação\3 Fase\Programacao I\Atividades\Aula01\Aula01\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\fabip\OneDrive\Documentos\Ciências da Computação\3 Fase\Programacao I\Atividades\Aula01\Aula01\obj\Debug\net8.0\Aula01.sourcelink.json

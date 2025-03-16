@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Models\\ErrorViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Aula01\\Models\\ErrorViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A96CBC5C-2583-4D4F-9697-4B4B48DFE15C}|Aula01\\Aula01.csproj|c:\\users\\fabip\\onedrive\\documentos\\ci\u00EAncias da computa\u00E7\u00E3o\\3 fase\\programacao i\\atividades\\aula01\\aula01\\controllers\\testecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A96CBC5C-2583-4D4F-9697-4B4B48DFE15C}|Aula01\\Aula01.csproj|solutionrelative:aula01\\controllers\\testecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Aula01\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Models\\Variaveis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Aula01\\Models\\Variaveis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Aula01\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A96CBC5C-2583-4D4F-9697-4B4B48DFE15C}|Aula01\\Aula01.csproj|c:\\users\\fabip\\onedrive\\documentos\\ci\u00EAncias da computa\u00E7\u00E3o\\3 fase\\programacao i\\atividades\\aula01\\aula01\\views\\teste\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A96CBC5C-2583-4D4F-9697-4B4B48DFE15C}|Aula01\\Aula01.csproj|solutionrelative:aula01\\views\\teste\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,69 +18,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "Aula01\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "Aula01\\Models\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T01:00:45.108Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Aula01\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Aula01\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAA+wBMAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T00:20:29.62Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Variaveis.cs",
-              "DocumentMoniker": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Models\\Variaveis.cs",
-              "RelativeDocumentMoniker": "Aula01\\Models\\Variaveis.cs",
-              "ToolTip": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Models\\Variaveis.cs",
-              "RelativeToolTip": "Aula01\\Models\\Variaveis.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T23:22:42.734Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Aula01\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Aula01\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEAAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-18T00:52:16.128Z"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TesteController.cs",
+              "DocumentMoniker": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Controllers\\TesteController.cs",
+              "RelativeDocumentMoniker": "Aula01\\Controllers\\TesteController.cs",
+              "ToolTip": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Controllers\\TesteController.cs",
+              "RelativeToolTip": "Aula01\\Controllers\\TesteController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T23:06:02.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Views\\Teste\\Index.cshtml",
+              "RelativeDocumentMoniker": "Aula01\\Views\\Teste\\Index.cshtml",
+              "ToolTip": "C:\\Users\\fabip\\OneDrive\\Documentos\\Ci\u00EAncias da Computa\u00E7\u00E3o\\3 Fase\\Programacao I\\Atividades\\Aula01\\Aula01\\Views\\Teste\\Index.cshtml",
+              "RelativeToolTip": "Aula01\\Views\\Teste\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAIwBoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-10T23:47:28.9Z",
+              "EditorCaption": ""
             }
           ]
         }
