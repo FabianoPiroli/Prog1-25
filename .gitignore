@@ -398,5 +398,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
-.vs/Aula01/FileContentIndex/80a5ac3a-57fd-4862-87f4-eb38fac8567e.vsidx
+.vs
 
