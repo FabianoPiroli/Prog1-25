@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "WeekDays";
+}
+<hr />
+
+<form method="post"
+	  asp-action="Index"
+	  asp asp-controller="Home">
+
+	<input type="number" id="dia" name="dia" />
+	<input type="submit" value="Mostrar" />
+
+</form>
+
+<hr />
+
+@if (ViewBag.Day != null)
+{
+<p>O dia da semana é: @ViewBag.Day</p>
+}
