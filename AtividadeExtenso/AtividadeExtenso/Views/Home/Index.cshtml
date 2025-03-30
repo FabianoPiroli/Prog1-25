@@ -1,0 +1,27 @@
+﻿@model AtividadeExtenso.Controllers.Result
+
+@{
+	<h1>Bem-Vindo ao sistema de conversão de números!</h1>
+}
+
+<hr/>
+
+<form method = "post"
+asp-action = "Index"
+asp asp-controller="Home">
+
+	<input type="number" id="valor" name="valor" />
+	<input type="submit" value="Converter" />
+
+</form>
+
+<hr/>
+
+@if (!string.IsNullOrEmpty(Model.Extenso))
+{
+	<div>
+		<span>Número Convertido: </span>
+        <strong> @Model.Extenso </strong>
+
+    </div>
+}
