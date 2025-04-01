@@ -1,0 +1,33 @@
+﻿@{
+	<text>Seja bem vindo ao jogo da velha</text>
+}
+
+<form id="JogoVelhaForm" method="post">
+    <div>
+        <table>
+            <tr>
+                <td><input type="text" name="A00" maxlength="1" pattern="[XO]" required /></td>
+                <td><input type="text" name="A01" maxlength="1" pattern="[XO]" required /></td>
+                <td><input type="text" name="A02" maxlength="1" pattern="[XO]" required /></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="A10" maxlength="1" pattern="[XO]" required /></td>
+                <td><input type="text" name="A11" maxlength="1" pattern="[XO]" required /></td>
+                <td><input type="text" name="A12" maxlength="1" pattern="[XO]" required /></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="A20" maxlength="1" pattern="[XO]" required /></td>
+                <td><input type="text" name="A21" maxlength="1" pattern="[XO]" required /></td>
+                <td><input type="text" name="A22" maxlength="1" pattern="[XO]" required /></td>
+            </tr>
+        </table>
+    </div>
+    <input type="submit" value="Validar" />
+
+</form>
+
+@if (ViewBag.Vencedor !=null)
+{
+	<h1>@ViewBag.Vencedor</h1>
+}
+
