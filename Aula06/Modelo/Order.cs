@@ -8,14 +8,27 @@
         public string? ShippingAddress { get; set; }
         public List<OrderItem>? OrderItems { get; set; }
 
-        public bool Validade()
+        public bool Validate()
         {
-            return true;
+            bool isValid = true;
+
+            isValid =
+                (this.Id > 0) &&
+                (this.Customer != null) &&
+                (this.OrderDate != DateTime.MinValue) &&
+                !string.IsNullOrEmpty(this.ShippingAddress);
+
+            return isValid;
         }
 
-        public Order Retrieve()
+        public Order Retrieve(int orderId)
         {
             return new Order();
+        }
+
+        public List<Order> Retrieve()
+        {
+            return new List<Order>();
         }
 
         public void Save(Order order)

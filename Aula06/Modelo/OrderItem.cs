@@ -13,9 +13,17 @@ namespace Modelo
         public double Quantity { get; set; }
         public double PurchasePrice { get; set; }
 
-        public bool Validade()
+        public bool Validate()
         {
-            return true;
+            bool isValid = true;
+
+            isValid =
+                (this.Id > 0) &&
+                (this.Product != null) &&
+                (this.PurchasePrice > 0) &&
+                (this.Quantity > 0);
+
+            return isValid;
         }
 
         public OrderItem Retrieve()

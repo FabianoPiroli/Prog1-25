@@ -10,9 +10,16 @@
         public static int InstanceCount = 0;
         public int ObjectCount = 0;
 
-        public bool Validade()
+        public bool Validate()
         {
-            return true;
+            bool isValid = true;
+
+            isValid =
+                !string.IsNullOrEmpty(this.Name) &&
+                (this.Id > 0) &&
+                string.IsNullOrEmpty(this.HomeAddress);
+
+            return isValid;
         }
 
         public Customer Retrieve()
