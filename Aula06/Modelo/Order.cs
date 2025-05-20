@@ -2,11 +2,28 @@
 {
     public class Order
     {
+        #region Atributos
         public int Id { get; set; }
         public Customer? Customer { get; set; }
         public DateTime OrderDate { get; set; }
         public string? ShippingAddress { get; set; }
         public List<OrderItem>? OrderItems { get; set; }
+        #endregion
+
+        #region Construtor
+        public Order()
+        {
+            OrderDate = DateTime.Now;
+            OrderItems = new List<OrderItem>();
+        }
+
+        public Order(int orderId) : this() //Cria outro construtor com sobrecarga de Order
+                                           // this chama o construtor padrão para herdar os atributos
+        {
+            this.Id = orderId;
+            this.ShippingAddress = $"Endereço {orderId}";
+        }
+        #endregion
 
         public bool Validate()
         {
