@@ -10,8 +10,8 @@ namespace Repository
     public class CustomerData
     {
         // Listas para armazenar os dados dos clientes, produtos e pedidos
-        public static List<Customer> Customers { get; set;} = [];
-        public static List<Product> Products { get; set;} = [];
-        public static List<Order> Orders { get; set;} = [];
+        public static List<Customer> Customers { get; set; } = [];
+        public static List<Product> Products { get; set; } = [];
+        public static List<Order> Orders { get; set; } = [];
     }
 }

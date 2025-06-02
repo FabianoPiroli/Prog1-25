@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    public class OrderRepository
+    class OrderRepository
     {
-        public List<Order> Retrieve()
+        public OrderRepository Retrieve()
         {
-            return new List<Order>();
+            return new OrderRepository();
         }
 
-        public void Save(Order order)
+        public void Save(OrderRepository orderRepository)
         {
 
         }

@@ -12,10 +12,11 @@ namespace Aula05ClassesIdentificadas.Controllers
         {
             _productRepository = new ProductRepository();
         }
+
         [HttpGet]
         public IActionResult Index()
         {
-            List<Customer> products = _productRepository.RetrieveAll();
+            List<Product> products = _productRepository.RetrieveAll();
 
             return View(products);
         }
@@ -30,7 +31,7 @@ namespace Aula05ClassesIdentificadas.Controllers
         public IActionResult Create(Product c)
         {
             _productRepository.Save(c);
-            List<Customer> customers = _productRepository.RetrieveAll();
+            List<Product> products = _productRepository.RetrieveAll();
 
             return View("Index", products);
         }
