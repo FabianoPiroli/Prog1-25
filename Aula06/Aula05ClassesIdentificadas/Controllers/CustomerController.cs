@@ -6,6 +6,8 @@ namespace Aula05ClassesIdentificadas.Controllers
 {
     public class CustomerController : Controller
     {
+        private readonly IWebHostEnvironment enviroment;
+
         private CustomerRepository _customerRepository;
 
         public CustomerController()
