@@ -15,6 +15,7 @@ namespace Aula05ClassesIdentificadas.Controllers
         )
         {
             _customerRepository = new CustomerRepository();
+            this.enviroment = environment;
         }
 
         [HttpGet]
