@@ -52,7 +52,13 @@ namespace Aula05ClassesIdentificadas.Controllers
                                ";
             }
 
-            var filepath = Path.Combine(enviroment.WebRootPath, "TextFiles", "Delimitado.txt");
+            var path = Path.Combine(enviroment.WebRootPath, "TextFiles");
+
+            if (!System.IO.Directory.Exists(path))
+                System.IO.Directory.CreateDirectory(path);
+            
+
+            var filepath = Path.Combine(path, "Delimitado.txt");
 
             if(!System.IO.File.Exists(filepath))
             {

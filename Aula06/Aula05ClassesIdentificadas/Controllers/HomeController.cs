@@ -9,7 +9,6 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
-    private Order _order;
 
     public HomeController(ILogger<HomeController> logger)
     {
