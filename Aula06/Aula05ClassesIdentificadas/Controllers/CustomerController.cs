@@ -38,20 +38,9 @@ namespace Aula05ClassesIdentificadas.Controllers
             string fileContent = string.Empty;
             foreach (Customer c in CustomerData.Customers)
             {
-                fileContent +=
-                                @$"{c.Id};
-                                  {c.Name};
-                                  {c.HomeAddress?.Id};
-                                  {c.HomeAddress?.City};
-                                  {c.HomeAddress?.State};
-                                  {c.HomeAddress?.Country};
-                                  {c.HomeAddress?.StreetLine1};
-                                  {c.HomeAddress?.StreetLine2};
-                                  {c.HomeAddress?.PostalCode};
-                                  {c.HomeAddress?.AddressType}
-                                   \n
-                               ";
+                fileContent += $"{c.Id}; {c.Name}; {c.HomeAddress?.Id}; {c.HomeAddress?.City}; {c.HomeAddress?.State}; {c.HomeAddress?.Country}; {c.HomeAddress?.StreetLine1}; {c.HomeAddress?.StreetLine2}; {c.HomeAddress?.PostalCode}; {c.HomeAddress?.AddressType}\n";
             }
+
 
             var path = Path.Combine(enviroment.WebRootPath, "TextFiles");
 
@@ -59,15 +48,15 @@ namespace Aula05ClassesIdentificadas.Controllers
                 System.IO.Directory.CreateDirectory(path);
             
 
-            var filepath = Path.Combine(path, "Delimitado.txt");
+            var filepath = Path.Combine(path, "CustomerDelimited.txt");
 
-            if(!System.IO.File.Exists(filepath))
-            {
+            //if(!System.IO.File.Exists(filepath))
+            //{
                 using (StreamWriter sw = System.IO.File.CreateText(filepath))
                 {
                     sw.WriteLine(fileContent);
                 }
-            }
+            //}
 
             return View();
         }
