@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Importar Arquivo Delimitado de Produtos";
+}
+
+<h2>Importar Arquivo Delimitado de Produtos</h2>
+
+<form asp-action="ImportDelimitatedFile" asp-controller="Product" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="file">Selecione o arquivo delimitado:</label>
+        <input type="file" name="file" id="file" class="form-control" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Importar</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <div>@error.ErrorMessage</div>
+        }
+    </div>
+}

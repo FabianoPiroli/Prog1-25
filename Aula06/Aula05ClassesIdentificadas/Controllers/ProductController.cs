@@ -69,5 +69,44 @@ namespace Aula05ClassesIdentificadas.Controllers
 
             return View("Index", products);
         }
+        [HttpPost]
+        public IActionResult ImportDelimitatedFile(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                ModelState.AddModelError("", "Selecione um arquivo para importar.");
+                return View();
+            }
+
+            using (var stream = new StreamReader(file.OpenReadStream()))
+            {
+                string? line;
+                while ((line = stream.ReadLine()) != null)
+                {
+                    // Esperado: Id; ProductName; Description; CurrentPrice;
+                    var parts = line.Split(';');
+                    if (parts.Length < 4)
+                        continue; // Linha inválida
+
+                    var product = new Product
+                    {
+                        Id = int.TryParse(parts[0], out int id) ? id : 0,
+                        ProductName = parts[1].Trim(),
+                        Description = parts[2].Trim(),
+                        CurrentPrice = decimal.TryParse(parts[3], out decimal price) ? price : 0
+                    };
+
+                    _productRepository.Save(product);
+                }
+            }
+
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult ImportDelimitatedFile()
+        {
+            return View();
+        }
+
     }
 }
