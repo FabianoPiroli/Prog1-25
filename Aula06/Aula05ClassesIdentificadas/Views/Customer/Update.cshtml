@@ -11,8 +11,22 @@
 
         <form id="formCustomer"
               method="post"
-              asp-action="Create"
+              asp-action="Update"
               asp-controller="Customer">
+
+            <div class="row">
+                <div class="form-group">
+                    <label asp-for="@Model.Name">Nome:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Name" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label asp-for="@Model.Name">Nome:</label>
+                    <input type="text" class="form-control" asp-for="@Model.Name" />
+                </div>
+            </div>
 
             <div class="row">
                 <div class="form-group">
@@ -24,8 +38,8 @@
             <button id="btnCustomer"
                     type="submit"
                     class="btn btn-primary"
-                    value="Cadastrar">
-                Cadastrar
+                    value="Atualizar">
+                Atualizar
             </button>
 
         </form>

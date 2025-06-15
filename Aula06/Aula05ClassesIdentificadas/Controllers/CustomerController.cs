@@ -196,5 +196,26 @@ namespace Aula05ClassesIdentificadas.Controllers
             }
             return ret;
         }
+
+        [HttpGet]
+        public IActionResult Update(int? id)
+        {
+            if (id is null || id.Value <= 0)
+                return NotFound();
+
+            Customer customer = _customerRepository.Retrieve(id.Value);
+
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return View(customer);
+        }
+
+        public IActionResult ConfirmUpdate(int? id)
+        {
+
+        }
     }
 }
