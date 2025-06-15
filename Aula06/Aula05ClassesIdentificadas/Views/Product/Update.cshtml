@@ -1,5 +1,33 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Modelo.Product
+
 @{
+    ViewData["Title"] = "Home Page";
 }
+
+<div class="text-center">
+    <h1>Consumidor @Model.ProductName</h1>
+
+    <div class="container">
+
+        <form id="formProduct"
+              method="post"
+              asp-action="Create"
+              asp-controller="Product">
+
+            <div class="row">
+                <div class="form-group">
+                    <label asp-for="@Model.ProductName">Nome:</label>
+                    <input type="text" class="form-control" asp-for="@Model.ProductName" />
+                </div>
+            </div>
+
+            <button id="btnProduct"
+                    type="submit"
+                    class="btn btn-primary"
+                    value="Cadastrar">
+                Cadastrar
+            </button>
+
+        </form>
+    </div>
+</div>

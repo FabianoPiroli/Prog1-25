@@ -1,5 +1,40 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Modelo.Product
+
+
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-6">
+			Id:
+		</div>
+		<div class="col-6">
+			@Model.Id
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-6">
+			Nome:
+		</div>
+		<div class="col-6">
+			@Model.ProductName
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-12">
+			<form asp-action="ConfirmDelete" asp-controller="Product" method="post">
+				<input type="hidden" name="id" value="@Model.Id" />
+				<button class="btn btn-primary">
+					Excluir
+				</button>
+				<a asp-action="Index" class="btn btn-danger" asp-controller="Product">
+					Voltar
+				</a>
+			</form>
+		</div>
+	</div>
+
+
+</div>

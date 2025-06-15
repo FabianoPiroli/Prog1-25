@@ -26,13 +26,13 @@
 						   title="Excluir Customer @customer.Name">
 							<i class="fa-solid fa-trash-can" style="color: #fa0000;"></i>
 						</a>
+					</td>
 					<td>
 						<a asp-action="Update" asp-controller="Customer"
 						   asp-route-id="@customer.Id"
 						   title="Atualizar Customer @customer.Name">
-							<i class="fa fa-pencil" aria-hidden="true" sstyle="color: #fa0000;"></i>
+							<i class="fa fa-pencil" aria-hidden="true" style="color: #fa0000;"></i>
 						</a>
-					</td>
 					</td>
 				</tr>
 			}
@@ -55,5 +55,5 @@ else
 </a>
 
 <a asp-action="ImportDelimitatedFile" asp-controller="Customer" class="btn btn-secondary">
-	Importar Consumidores
+	Importar Delimitados
 </a>

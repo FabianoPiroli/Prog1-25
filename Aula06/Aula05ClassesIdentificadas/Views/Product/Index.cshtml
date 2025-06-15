@@ -11,6 +11,7 @@
 			<tr>
 				<th>Id</th>
 				<th>Nome</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -19,6 +20,19 @@
 				<tr>
 					<td>@product.Id</td>
 					<td>@product.ProductName</td>
+					<td>
+						<a asp-action="Delete" asp-controller="Product"
+						   asp-route-id="@product.Id"
+						   title="Excluir Product @product.ProductName">
+							<i class="fa-solid fa-trash-can" style="color: #fa0000;"></i>
+						</a>
+					</td>
+					<td>
+						<a asp-action="Update" asp-controller="Product"
+						   asp-route-id="@product.Id"
+						   title="Atualizar Product @product.ProductName">
+							<i class="fa fa-pencil" aria-hidden="true" style="color: #fa0000;"></i>
+						</a>
 				</tr>
 			}
 		</tbody>
@@ -32,9 +46,13 @@ else
 }
 
 <a asp-action="ExportDelimitatedFile" asp-controller="Product" class="btn btn-light">
-	Exportar Dados
+	Exportar Delimitados
+</a>
+
+<a asp-action="ExportFixedFile" asp-controller="Product" class="btn btn-light">
+	Exportar fixos
 </a>
 
 <a asp-action="ImportDelimitatedFile" asp-controller="Product" class="btn btn-secondary">
-    Importar Produtos
+    Importar Delimitados
 </a>
