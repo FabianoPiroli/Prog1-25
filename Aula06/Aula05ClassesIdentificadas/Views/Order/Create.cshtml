@@ -44,14 +44,12 @@
                         <tr>
                             <td>
                                 <input type="checkbox"
-                                name="SelectedItems[@i].IsSelected"
-                                value="true"
-                                @(item.IsSelected ? "checked" : "") />
+                                asp-for="@Model.SelectedItems[i].IsSelected"/>
                             </td>
                             <td>@item.OrderItem.Product.ProductName</td>
                             <td>
                                 <input type="number"
-                                name="SelectedItems[@i].OrderItem.Quantity"
+                                asp-for="@Model.SelectedItems[@i].OrderItem.Quantity"
                                 value="@item.OrderItem.Quantity"
                                 step="1" />
                             </td>
@@ -62,8 +60,7 @@
                                     name="SelectedItems[@i].OrderItem.PurchasePrice"
                                     value="@item.OrderItem.PurchasePrice"
                                     step="0.01"
-                                    class="form-control"/>
-                                    
+                                    class="form-control"/>  
                                 </div>
                             </td>
                         </tr>

@@ -47,12 +47,11 @@ namespace Aula05ClassesIdentificadas.Controllers
         [HttpPost]
         public IActionResult Create(OrderViewModel model)
         {
+            // Validação automática do modelo
             if (!ModelState.IsValid)
             {
-                // Recarrega listas para o caso de erro de validação
+                // Recarrega apenas a lista de clientes para manter os dados preenchidos pelo usuário
                 model.Customers = _customerRepository.RetrieveAll();
-                var products = _productRepository.RetrieveAll();
-                model.SelectedItems = products.Select(p => new SelectedItem { OrderItem = new OrderItem { Product = p } }).ToList();
                 return View("Create", model);
             }
 
@@ -81,11 +80,12 @@ namespace Aula05ClassesIdentificadas.Controllers
                 }
             }
 
-
+            // Salva o pedido na lista correta
             _orderRepository.Save(order);
 
             return RedirectToAction("Index");
         }
+
 
     }
 }
