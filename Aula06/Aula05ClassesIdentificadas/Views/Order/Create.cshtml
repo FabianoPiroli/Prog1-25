@@ -10,14 +10,14 @@
     <div class="container">
 
         <form id="formOrder"
-              method="post"
-              asp-action="Create"
-              asp-controller="Order">
+        method="post"
+        asp-action="Create"
+        asp-controller="Order">
 
             <div class="row">
                 <div class="form-group">
-                    <label asp-for="@Model.CustomerId">Cliente:</label>
-                    <select asp-for="@Model.CustomerId">
+                    <label asp-for="CustomerId">Cliente:</label>
+                    <select asp-for="CustomerId">
                         @foreach (var c in Model.Customers)
                         {
                             <option value="@c.Id">@c.Name</option>
@@ -26,21 +26,43 @@
                 </div>
             </div>
             <br />
-            <table class =" table table-striped table-bordered table-hover">
+            <table class="table table-striped table-bordered table-hover">
                 <thead class="table-dark">
                     <tr>
+                        <th></th>
                         <th>Item</th>
                         <th>Quantidade</th>
                         <th>Valor</th>
-                        <th></th>
                     </tr>
                 </thead>
-               <tbody>
-                   @foreach(var item in Model.SelectedItems)
+                <tbody>
+                    @{
+                        int i = 0;
+                    }
+                    @foreach(var item in Model.SelectedItems)
                     {
                         <tr>
-                            <td></td>
+                            <td>
+                                <input type="checkbox"
+                                name="SelectedItems[@i].IsSelected"
+                                value="true"
+                                @(item.IsSelected ? "checked" : "") />
+                            </td>
+                            <td>@item.OrderItem.Product.ProductName</td>
+                            <td>
+                                <input type="number"
+                                name="SelectedItems[@i].OrderItem.Quantity"
+                                value="@item.OrderItem.Quantity"
+                                step="1" />
+                            </td>
+                            <td>
+                                <input type="number"
+                                name="SelectedItems[@i].OrderItem.PurchasePrice"
+                                value="@item.OrderItem.PurchasePrice"
+                                step="0.01" />
+                            </td>
                         </tr>
+                        i++;
                     }
                 </tbody>
             </table>
@@ -54,4 +76,3 @@
         </form>
     </div>
 </div>
-

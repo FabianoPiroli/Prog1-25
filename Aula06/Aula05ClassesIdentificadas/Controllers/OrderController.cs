@@ -23,7 +23,7 @@ namespace Aula05ClassesIdentificadas.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View(_orderRepository.RetrieveAll);
+            return View(_orderRepository.RetrieveAll());
         }
 
         [HttpGet]
@@ -44,5 +44,48 @@ namespace Aula05ClassesIdentificadas.Controllers
 
             return View(viewModel);
         }
+        [HttpPost]
+        public IActionResult Create(OrderViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Recarrega listas para o caso de erro de validação
+                model.Customers = _customerRepository.RetrieveAll();
+                var products = _productRepository.RetrieveAll();
+                model.SelectedItems = products.Select(p => new SelectedItem { OrderItem = new OrderItem { Product = p } }).ToList();
+                return View("Create", model);
+            }
+
+            // Monta o objeto Order
+            var order = new Order
+            {
+                Customer = _customerRepository.Retrieve((int)model.CustomerId),
+                OrderDate = DateTime.Now,
+                OrderItems = new List<OrderItem>()
+            };
+
+            // Adiciona apenas os itens marcados (IsSelected)
+            if (model.SelectedItems != null)
+            {
+                foreach (var item in model.SelectedItems.Where(x => x.IsSelected))
+                {
+                    if (item.OrderItem != null && item.OrderItem.Product != null)
+                    {
+                        order.OrderItems.Add(new OrderItem
+                        {
+                            Product = _productRepository.Retrieve(item.OrderItem.Product.Id),
+                            Quantity = item.OrderItem.Quantity,
+                            PurchasePrice = item.OrderItem.PurchasePrice
+                        });
+                    }
+                }
+            }
+
+
+            _orderRepository.Save(order);
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
