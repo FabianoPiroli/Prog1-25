@@ -215,7 +215,7 @@ namespace Aula05ClassesIdentificadas.Controllers
 
         public IActionResult ConfirmUpdate(int? id)
         {
-
+            return View();
         }
     }
 }
