@@ -29,7 +29,7 @@
             <table class="table table-striped table-bordered table-hover">
                 <thead class="table-dark">
                     <tr>
-                        <th></th>
+                        <th><i class="fa-solid fa-check"></i></th>
                         <th>Item</th>
                         <th>Quantidade</th>
                         <th>Valor</th>
@@ -56,10 +56,15 @@
                                 step="1" />
                             </td>
                             <td>
-                                <input type="number"
-                                name="SelectedItems[@i].OrderItem.PurchasePrice"
-                                value="@item.OrderItem.PurchasePrice"
-                                step="0.01" />
+                                <div class="input-group">
+                                    <span class="input-group-text">R$</span>
+                                    <input type="number"
+                                    name="SelectedItems[@i].OrderItem.PurchasePrice"
+                                    value="@item.OrderItem.PurchasePrice"
+                                    step="0.01"
+                                    class="form-control"/>
+                                    
+                                </div>
                             </td>
                         </tr>
                         i++;
