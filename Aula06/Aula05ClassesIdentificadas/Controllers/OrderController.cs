@@ -47,40 +47,25 @@ namespace Aula05ClassesIdentificadas.Controllers
         [HttpPost]
         public IActionResult Create(OrderViewModel model)
         {
-            // Validação automática do modelo
-            if (!ModelState.IsValid)
-            {
-                // Recarrega apenas a lista de clientes para manter os dados preenchidos pelo usuário
-                model.Customers = _customerRepository.RetrieveAll();
-                return View("Create", model);
-            }
+            Order order = new Order();
+            order.Customer = _customerRepository.Retrieve(model.CustomerId!.Value);
+            order.OrderDate = DateTime.Now;
 
-            // Monta o objeto Order
-            var order = new Order
+            int count = 1;
+            foreach(var item in model.SelectedItems!)
             {
-                Customer = _customerRepository.Retrieve((int)model.CustomerId),
-                OrderDate = DateTime.Now,
-                OrderItems = new List<OrderItem>()
-            };
-
-            // Adiciona apenas os itens marcados (IsSelected)
-            if (model.SelectedItems != null)
-            {
-                foreach (var item in model.SelectedItems.Where(x => x.IsSelected))
+                if (item.IsSelected)
                 {
-                    if (item.OrderItem != null && item.OrderItem.Product != null)
-                    {
-                        order.OrderItems.Add(new OrderItem
-                        {
-                            Product = _productRepository.Retrieve(item.OrderItem.Product.Id),
-                            Quantity = item.OrderItem.Quantity,
-                            PurchasePrice = item.OrderItem.PurchasePrice
-                        });
-                    }
+                    order.OrderItems!.Add(new OrderItem() {
+                        Id = count,
+                        Product = _productRepository.Retrieve(item.OrderItem!.Product!.Id),
+                        Quantity = item.OrderItem.Quantity!,
+                        PurchasePrice = item.OrderItem.PurchasePrice!
+                    });
+                    count++;
                 }
             }
 
-            // Salva o pedido na lista correta
             _orderRepository.Save(order);
 
             return RedirectToAction("Index");

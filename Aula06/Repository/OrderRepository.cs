@@ -35,13 +35,13 @@ namespace Repository
 
         public List<Order> RetrieveAll() // Método para recuperar todos os clientes
         {
-            return OrderData.Orders; // Retorna a lista de todos os clientes armazenados
+            return CustomerData.Orders; // Retorna a lista de todos os clientes armazenados
         }
 
         public void Save(Order order)
         {
             order.Id = GetCount() + 1; // Atribui um novo ID baseado na contagem atual
-            OrderData.Orders.Add(order);
+            CustomerData.Orders.Add(order);
         }
 
         public bool Delete(Order order)
