@@ -1,0 +1,40 @@
+﻿@model Modelo.Imovel
+@{
+    ViewData["Title"] = "Bem-vindo";
+}
+
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+            <h1 class="display-4 fw-bold">Bem-vindo à Imobiliária Dream Home</h1>
+
+            <p class="lead mt-3">
+                <strong>O que Fazemos?</strong>
+            </p>
+            <p>
+                Somos a melhor imobiliária de Santa Catarina, com foco em melhorar o atendimento do mercado imobiliário nacional.
+                Para isso, fechamos parceria com as melhores construtoras da região e os melhores proprietários de locação de cada cidade.
+            </p>
+            <p>
+                Para nós, cada imóvel tem um motivo especial para existir. Por isso, selecionamos os melhores imóveis que combinem com os nossos clientes.
+            </p>
+
+            <h2 class="fw-bold mt-4">Melhor Imobiliária de Santa Catarina</h2>
+
+            <p>
+                Com uma equipe de funcionários e corretores formada por moradores de cada região, nos qualificamos cada vez mais para lhe assessorar
+                e ajudar a solucionar todas as suas dificuldades encontradas no momento da locação, venda ou compra do seu sonhado imóvel.
+            </p>
+
+            <a asp-controller="Imovel" asp-action="Index" class="btn btn-primary btn-lg mt-3" style="background-color: #ad1700;">
+                Ver Imóveis
+            </a>
+        </div>
+
+        <div class="col-md-6 text-center mt-4 mt-md-0">
+            <img src="/imagens/BANNER.jpg"
+                 alt="Imóvel moderno"
+                 class="img-fluid rounded shadow" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+﻿@model Modelo.Imovel
+@{
+    ViewBag.Title = "Cadastrar Imóvel";
+}
+
+<div class="container mt-5" >
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="mb-4 text-center">Cadastrar Imóvel</h2>
+            <form asp-action="Create" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                   
+                    <label asp-for="Nome" class="form-label">Nome:</label>
+                    <input asp-for="Nome" class="form-control" />
+                
+                </div>
+                
+                <div class="mb-3">
+                    
+                    <label asp-for="Endereco" class="form-label">Endereço:</label>
+                    <input asp-for="Endereco" class="form-control" />
+                
+                </div>
+               
+                <div class="mb-3">
+                    <label asp-for="Preco" class="form-label">Preço:</label>
+                    <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                        <input asp-for="Preco" class="form-control" id="preco" inputmode="numeric" />
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label asp-for="Quartos" class="form-label">Quartos:</label>
+                    <input asp-for="Quartos" class="form-control" type="number" />
+                
+                </div>
+                
+                <div class="mb-3">
+                
+                    <label asp-for="VagasGaragem" class="form-label">Vagas Garagem:</label>
+                    <input asp-for="VagasGaragem" class="form-control" type="number" />
+                
+                </div>
+                
+                <div class="mb-3">
+                
+                    <label asp-for="Banheiros" class="form-label">Banheiros:</label>
+                    <input asp-for="Banheiros" class="form-control" type="number" />
+                
+                </div>
+                
+                <div class="mb-3">
+                
+                    <label asp-for="Descricao" class="form-label">Descrição:</label>
+                    <textarea asp-for="Descricao" class="form-control" rows="3"></textarea>
+                
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">Foto do Imóvel:</label>
+                    <input type="file" name="Imagem" class="form-control" />
+
+                </div>
+
+                
+                <div class="mb-3">
+                
+                    <label asp-for="CategoriaId" class="form-label">Categoria:</label>
+                    <select asp-for="CategoriaId" asp-items="ViewBag.Categorias" class="form-select"></select>
+                
+                </div>
+                
+                <div class="text-center">
+                
+                    <button type="submit" class="btn btn-primary" style="background-color: #ad1700;" >Salvar</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const precoInput = document.getElementById('preco');
+
+    precoInput.addEventListener('input', function (e) {
+        let value = e.target.value.replace(/\D/g, '');
+
+        if (value === '') {
+            e.target.value = '';
+            return;
+        }
+
+        value = (parseInt(value, 10) / 100).toFixed(2);
+
+        e.target.value = value
+            .replace('.', ',')
+            .replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    });
+</script>
