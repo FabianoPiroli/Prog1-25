@@ -14,19 +14,19 @@
                 asp-action="Create" 
                 asp-controller="Customer">
 
-        <div class="row">
-            <div class="form-group">
-                <label asp-for="@Model.Name">Nome:</label>
-                <input type="text" class = "form-control" asp-for="@Model.Name" />
+            <div class="row">
+                <div class="form-group">
+                    <label asp-for="@Model.Name">Nome:</label>
+                    <input type="text" class = "form-control" asp-for="@Model.Name" />
+                </div>
             </div>
-        </div>
 
-        <button id="btnCustomer"
-                type="submit" 
-                class="btn btn-primary"
-                value="Cadastrar">
-                Cadastrar
-        </button>
+            <button id="btnCustomer"
+                    type="submit" 
+                    class="btn btn-primary"
+                    value="Cadastrar">
+                    Cadastrar
+            </button>
 
         </form>
     </div>

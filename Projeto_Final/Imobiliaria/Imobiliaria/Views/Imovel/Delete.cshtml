@@ -1,0 +1,30 @@
+﻿@model Modelo.Imovel
+@{
+    ViewData["Title"] = "Excluir Imóvel";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="card shadow p-4" style="background-color: #f8f1e4;">
+                <h2 class="mb-4 text-danger">Tem certeza que deseja excluir este imóvel?</h2>
+
+                <div class="mb-3 text-start">
+                    <p><strong>ID:</strong> @Model.Id</p>
+                    <p><strong>Nome:</strong> @Model.Nome</p>
+                    <p><strong>Endereço:</strong> @Model.Endereco.Logradouro</p>
+                    <p><strong>Preço:</strong> @Model.Preco.ToString("C")</p>
+                </div>
+
+                <form asp-action="ConfirmDelete" method="post" asp-controller="Imovel">
+                    <input type="hidden" name="id" value="@Model.Id" />
+
+                    <div class="d-flex justify-content-center mt-4 gap-3">
+                        <button type="submit" class="btn text-white" style="background-color: #ad1700;">Excluir</button>
+                        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,1 +1,2 @@
-"Mansão";"Rua das Flores";"5";"4";"6";"Linda Mansão";"Casa"
+"Casa";"Rua das Flores";"5";"4";"6";"Linda Casa de Esquina";"Casa"
+"Mansão";"Rua dos Passos";"7";"7";"9";"Mansão luxuosa";"Casa"

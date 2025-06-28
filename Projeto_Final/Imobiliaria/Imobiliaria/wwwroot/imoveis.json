@@ -1,0 +1,28 @@
+[
+  {
+    "Id": 2,
+    "Nome": "Mans\u00E3o",
+    "Preco": 1000000.00,
+    "Quartos": 7,
+    "Banheiros": 9,
+    "VagasGaragem": 7,
+    "Endereco": {
+      "Id": 0,
+      "Logradouro": "Rua dos Passos",
+      "Referencia": null,
+      "Cidade": null,
+      "Estado": null,
+      "CEP": null,
+      "Pais": null,
+      "TipoEndereco": null
+    },
+    "Descricao": "Mans\u00E3o luxuosa",
+    "CaminhoImagem": "/imagens/0f8c5415-cb7f-419d-b02d-142a4d604b22.jpg",
+    "CategoriaId": 2,
+    "Categoria": {
+      "Id": 2,
+      "Nome": "Casa",
+      "Imoveis": null
+    }
+  }
+]

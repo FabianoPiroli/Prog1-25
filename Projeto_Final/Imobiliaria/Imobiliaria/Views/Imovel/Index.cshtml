@@ -1,4 +1,4 @@
-﻿@model Modelo.Imovel
+﻿   @model List<Modelo.Imovel>
 
 
 
@@ -13,10 +13,25 @@
             </a>
 
             <a asp-action="ExportarTxt" class="btn btn-outline-primary">
-                <i class="bi bi-download"></i> Exportar para .txt
+                <i class="bi bi-download"></i> Gerar Relatório
             </a>
         </div>
     </div>
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-dismissible fade show text-white" role="alert" style="background-color: #de7c6d;">
+            @TempData["MensagemSucesso"]
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-dismissible fade show text-white" role="alert" style="background-color: #de7c6d;">
+            @TempData["MensagemErro"]
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
     <table class="table table-bordered table-hover align-middle">
         <thead class="table-dark">
@@ -30,6 +45,7 @@
                 <th>Descrição</th>
                 <th>Fotos</th>
                 <th>Categoria</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -39,7 +55,7 @@
                 {
                     <tr>
                         <td>@item.Nome</td>
-                        <td>@item.Endereco</td>
+                        <td>@item.Endereco.Logradouro</td>
                         <td>@string.Format("{0:C}", item.Preco)</td>
                         <td>@item.Quartos</td>
                         <td>@item.VagasGaragem</td>
@@ -55,7 +71,7 @@
                         <td>@item.Categoria?.Nome</td>
 
                         <td>
-                            <a asp-action="Edit"
+                            <a asp-action="Update"
                                asp-controller="Imovel"
                                asp-route-id="@item.Id"
                                title="Editar Imóvel de número @item.Id">

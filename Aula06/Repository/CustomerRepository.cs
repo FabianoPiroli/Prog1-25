@@ -21,7 +21,7 @@ namespace Repository
 
         }
 
-        public List<Customer> RetrieveByName(string name)
+        public List<Customer> RetrieveByName(string name) // Método para recuperar clientes pelo nome
         {
             List<Customer> ret = new List<Customer>(); // Cria uma lista para armazenar os clientes encontrados
 

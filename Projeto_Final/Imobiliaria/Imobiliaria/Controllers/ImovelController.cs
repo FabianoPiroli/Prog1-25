@@ -1,4 +1,5 @@
 ﻿using Modelo;
+using Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -6,24 +7,31 @@ namespace Imobiliaria.Controllers
 {
     public class ImovelController : Controller
     {
-        public static List<Categoria> categorias = new List<Categoria>
-    {
-        new Categoria { Id = 1, Nome = "Apartamento" },
-        new Categoria { Id = 2, Nome = "Casa" },
-        new Categoria { Id = 3, Nome = "Sítio" },
-        new Categoria { Id = 4, Nome = "Sala Comercial" }
-    };
+        private readonly IWebHostEnvironment enviroment;
+        private ImovelRepository _imovelRepository;
 
-        public static List<Imovel> imoveis = new List<Imovel>();
+        public ImovelController(IWebHostEnvironment enviroment)
+        {
+            _imovelRepository = new ImovelRepository();
+            this.enviroment = enviroment;
+        }
+
+        public static List<Categoria> categorias = new List<Categoria>
+            {
+                new Categoria { Id = 1, Nome = "Apartamento" },
+                new Categoria { Id = 2, Nome = "Casa" },
+                new Categoria { Id = 3, Nome = "Sítio" },
+                new Categoria { Id = 4, Nome = "Sala Comercial" }
+            };
 
         [HttpGet]
         public IActionResult Index()
         {
-            var lista = imoveis.Select(i =>
+            var lista = _imovelRepository.RetrieveAll();
+            foreach (var i in lista)
             {
                 i.Categoria = categorias.FirstOrDefault(c => c.Id == i.CategoriaId);
-                return i;
-            }).ToList();
+            }
             return View(lista);
         }
 
@@ -53,7 +61,7 @@ namespace Imobiliaria.Controllers
             }
 
             imovel.Categoria = categorias.FirstOrDefault(c => c.Id == imovel.CategoriaId);
-            imoveis.Add(imovel);
+            _imovelRepository.Save(imovel);
 
             return RedirectToAction("Index");
         }
@@ -61,8 +69,9 @@ namespace Imobiliaria.Controllers
         [HttpGet]
         public IActionResult ExportarTxt()
         {
-            var linhas = imoveis.Select(i =>
-                $"\"{i.Nome}\";\"{i.Endereco}\";\"{i.Quartos}\";\"{i.VagasGaragem}\";\"{i.Banheiros}\";\"{i.Descricao}\";\"{categorias.First(c => c.Id == i.CategoriaId).Nome}\""
+            var lista = _imovelRepository.RetrieveAll();
+            var linhas = lista.Select(i =>
+                $"\"{i.Nome}\";\"{i.Endereco.Logradouro}\";\"{i.Quartos}\";\"{i.VagasGaragem}\";\"{i.Banheiros}\";\"{i.Descricao}\";\"{categorias.First(c => c.Id == i.CategoriaId).Nome}\""
             ).ToList();
 
             string caminho = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imoveis.txt");
@@ -72,12 +81,72 @@ namespace Imobiliaria.Controllers
         }
 
         [HttpGet]
-        public IActionResult Update(Imovel i)
+        public IActionResult Delete(int? id)
         {
+            if (id is null || id <= 0)
+                return NotFound();
 
-            return View();
+            var imovel = _imovelRepository.Retrieve(id.Value);
+            if (imovel == null)
+                return NotFound();
+
+            return View(imovel);
         }
 
+        [HttpPost]
+        public IActionResult ConfirmDelete(int? id)
+        {
+            if (id is null || id <= 0)
+                return NotFound();
 
+            if (_imovelRepository.DeleteById(id.Value))
+            {
+                TempData["MensagemSucesso"] = "Imóvel excluído com sucesso!";
+                return RedirectToAction("Index");
+            }
+
+            TempData["MensagemErro"] = "Erro ao excluir o imóvel.";
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Update(int? id)
+        {
+            if (id is null || id <= 0)
+                return NotFound();
+
+            Imovel imovel = _imovelRepository.Retrieve(id.Value);
+
+            if (imovel == null)
+                return NotFound();
+
+            ViewBag.Categorias = new SelectList(categorias, "Id", "Nome", imovel.CategoriaId);
+            return View(imovel);
+        }
+
+        [HttpPost]
+        public IActionResult ConfirmUpdate(Imovel imovel, IFormFile Imagem)
+        {
+            if (Imagem != null && Imagem.Length > 0)
+            {
+                var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(Imagem.FileName);
+                var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens");
+                Directory.CreateDirectory(caminhoPasta);
+                var caminhoCompleto = Path.Combine(caminhoPasta, nomeArquivo);
+
+                using (var stream = new FileStream(caminhoCompleto, FileMode.Create))
+                {
+                    Imagem.CopyTo(stream);
+                }
+
+                imovel.CaminhoImagem = "/imagens/" + nomeArquivo;
+            }
+
+            imovel.Categoria = categorias.FirstOrDefault(c => c.Id == imovel.CategoriaId);
+            _imovelRepository.Update(imovel);
+
+            TempData["MensagemSucesso"] = "Imóvel atualizado com sucesso!";
+            return RedirectToAction("Index");
+        }
     }
 }
