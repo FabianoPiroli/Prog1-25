@@ -71,7 +71,7 @@ namespace Imobiliaria.Controllers
         {
             var lista = _imovelRepository.RetrieveAll();
             var linhas = lista.Select(i =>
-                $"\"{i.Nome}\";\"{i.Endereco.Logradouro}\";\"{i.Quartos}\";\"{i.VagasGaragem}\";\"{i.Banheiros}\";\"{i.Descricao}\";\"{categorias.First(c => c.Id == i.CategoriaId).Nome}\""
+                $"\"{i.Nome}\";\"{i.Endereco.Logradouro}\";\"{i.Endereco.Referencia}\";\"{i.Endereco.Cidade}\";\"{i.Endereco.Estado}\";\"{i.Endereco.CEP}\";\"{i.Endereco.Pais}\";\"Quartos: {i.Quartos}\";\"Vagas: {i.VagasGaragem}\";\"Banheiros: {i.Banheiros}\";\"{i.Descricao}\";\"{categorias.First(c => c.Id == i.CategoriaId).Nome}\""
             ).ToList();
 
             string caminho = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imoveis.txt");
@@ -144,8 +144,8 @@ namespace Imobiliaria.Controllers
 
             imovel.Categoria = categorias.FirstOrDefault(c => c.Id == imovel.CategoriaId);
             _imovelRepository.Update(imovel);
-
             TempData["MensagemSucesso"] = "Imóvel atualizado com sucesso!";
+
             return RedirectToAction("Index");
         }
     }

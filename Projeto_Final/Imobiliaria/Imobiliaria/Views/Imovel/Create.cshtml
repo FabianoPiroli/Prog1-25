@@ -1,4 +1,5 @@
 ﻿@model Modelo.Imovel
+
 @{
     ViewBag.Title = "Cadastrar Imóvel";
 }
@@ -15,14 +16,36 @@
                     <input asp-for="Nome" class="form-control" />
                 
                 </div>
-                
-                <div class="mb-3">
-                    
-                    <label asp-for="Endereco.Logradouro" class="form-label">Endereço:</label>
-                    <input asp-for="Endereco.Logradouro" class="form-control" />
-                
-                </div>
-               
+
+                <fieldset>
+                    <legend>Endereço:</legend>
+                    <div class="mb-3">
+                        <label asp-for="Endereco.Logradouro" class="form-label">Rua:</label>
+                        <input placeholder="Rua dos Martelos" asp-for="Endereco.Logradouro" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Endereco.Referencia" class="form-label">Referência:</label>
+                        <input placeholder="Próximo a..." asp-for="Endereco.Referencia" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Endereco.Cidade" class="form-label">Cidade:</label>
+                        <input placeholder="Joaçaba" asp-for="Endereco.Cidade" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Endereco.Estado" class="form-label">Estado:</label>
+                        <input placeholder="Santa Catarina" asp-for="Endereco.Estado" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Endereco.CEP" class="form-label">CEP:</label>
+                        <input placeholder="89650-000" asp-for="Endereco.CEP" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Endereco.Pais" class="form-label">País:</label>
+                        <input placeholder="Brasil" asp-for="Endereco.Pais" class="form-control" />
+                    </div>
+                </fieldset>
+                <hr />
+
                 <div class="mb-3">
                     <label asp-for="Preco" class="form-label">Preço:</label>
                     <div class="input-group">

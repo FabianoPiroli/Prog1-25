@@ -9,19 +9,118 @@
     "Endereco": {
       "Id": 0,
       "Logradouro": "Rua dos Passos",
-      "Referencia": null,
-      "Cidade": null,
-      "Estado": null,
-      "CEP": null,
-      "Pais": null,
-      "TipoEndereco": null
+      "Referencia": "Pr\u00F3ximo a Igreja",
+      "Cidade": "Videira",
+      "Estado": "SC",
+      "CEP": "89562-068",
+      "Pais": "Brasil"
     },
-    "Descricao": "Mans\u00E3o luxuosa",
-    "CaminhoImagem": "/imagens/0f8c5415-cb7f-419d-b02d-142a4d604b22.jpg",
+    "Descricao": "Mans\u00E3o luxuosa com piscina.",
+    "CaminhoImagem": "/imagens/2f81b6c5-ed8b-4254-adab-31a5dd1a489b.jpg",
     "CategoriaId": 2,
     "Categoria": {
       "Id": 2,
       "Nome": "Casa",
+      "Imoveis": null
+    }
+  },
+  {
+    "Id": 3,
+    "Nome": "Casa",
+    "Preco": 400000.00,
+    "Quartos": 4,
+    "Banheiros": 3,
+    "VagasGaragem": 3,
+    "Endereco": {
+      "Id": 0,
+      "Logradouro": "Josefina Henn",
+      "Referencia": "Pr\u00F3ximo a Igreja S\u00E3o Crist\u00F3v\u00E3o",
+      "Cidade": "Videira",
+      "Estado": "SC",
+      "CEP": "89562-068",
+      "Pais": "Brasil"
+    },
+    "Descricao": "Casa de Esquina com dois andares.",
+    "CaminhoImagem": "/imagens/1053451e-5e15-4641-9e59-bf78c0dfd285.jpg",
+    "CategoriaId": 2,
+    "Categoria": {
+      "Id": 2,
+      "Nome": "Casa",
+      "Imoveis": null
+    }
+  },
+  {
+    "Id": 4,
+    "Nome": "Apartamento Cobertura",
+    "Preco": 700000.00,
+    "Quartos": 4,
+    "Banheiros": 4,
+    "VagasGaragem": 2,
+    "Endereco": {
+      "Id": 0,
+      "Logradouro": "Saul Brandalise",
+      "Referencia": "Bradesco",
+      "Cidade": "Videira",
+      "Estado": "SC",
+      "CEP": "8956-000",
+      "Pais": "Brasil"
+    },
+    "Descricao": "Apartamento alto padr\u00E3o na cobertura do edif\u00EDcio Trindade",
+    "CaminhoImagem": "/imagens/659b54a9-276d-4a1b-89e6-2e2a74715417.jpg",
+    "CategoriaId": 1,
+    "Categoria": {
+      "Id": 1,
+      "Nome": "Apartamento",
+      "Imoveis": null
+    }
+  },
+  {
+    "Id": 5,
+    "Nome": "S\u00EDtio no Interior",
+    "Preco": 2000000.00,
+    "Quartos": 5,
+    "Banheiros": 6,
+    "VagasGaragem": 4,
+    "Endereco": {
+      "Id": 0,
+      "Logradouro": "Linha Baroncello",
+      "Referencia": "VT",
+      "Cidade": "Videira",
+      "Estado": "SC",
+      "CEP": "8956-000",
+      "Pais": "Brasil"
+    },
+    "Descricao": "Lindo s\u00EDtio no interior de Videira.",
+    "CaminhoImagem": "/imagens/75ac9b4e-fcb4-47b1-9c6b-bb3b5b9664f2.jpg",
+    "CategoriaId": 3,
+    "Categoria": {
+      "Id": 3,
+      "Nome": "S\u00EDtio",
+      "Imoveis": null
+    }
+  },
+  {
+    "Id": 6,
+    "Nome": "Sala Comercial",
+    "Preco": 3000.00,
+    "Quartos": 1,
+    "Banheiros": 1,
+    "VagasGaragem": 1,
+    "Endereco": {
+      "Id": 0,
+      "Logradouro": "Jorge Campos",
+      "Referencia": "Dentro do shopping Brasil",
+      "Cidade": "Videira",
+      "Estado": "SC",
+      "CEP": "8956-000",
+      "Pais": "Brasil"
+    },
+    "Descricao": "Sala comercial para alugar no centro, situada dentro do shopping",
+    "CaminhoImagem": "/imagens/4cfb21ce-14a7-4a3b-a34a-59870fb3ef9d.jpg",
+    "CategoriaId": 4,
+    "Categoria": {
+      "Id": 4,
+      "Nome": "Sala Comercial",
       "Imoveis": null
     }
   }

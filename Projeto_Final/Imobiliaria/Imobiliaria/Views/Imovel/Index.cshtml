@@ -55,7 +55,13 @@
                 {
                     <tr>
                         <td>@item.Nome</td>
-                        <td>@item.Endereco.Logradouro</td>
+                        <td>
+                            <ul>
+                                <li>@item.Endereco.Cidade</li>
+                                <li>@item.Endereco.Estado</li>
+                                <li>@item.Endereco.Logradouro</li>
+                            </ul>
+                        </td>
                         <td>@string.Format("{0:C}", item.Preco)</td>
                         <td>@item.Quartos</td>
                         <td>@item.VagasGaragem</td>

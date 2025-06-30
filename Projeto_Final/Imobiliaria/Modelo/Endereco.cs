@@ -15,7 +15,6 @@ namespace Modelo
         public string? Estado { get; set; }
         public string? CEP { get; set; }
         public string? Pais { get; set; }
-        public string? TipoEndereco { get; set; }
 
         public bool Validate()
         {
@@ -27,10 +26,7 @@ namespace Modelo
                 !string.IsNullOrEmpty(this.Cidade) &&
                 !string.IsNullOrEmpty(this.Estado) &&
                 !string.IsNullOrEmpty(this.CEP) &&
-                !string.IsNullOrEmpty(this.Pais) &&
-                !string.IsNullOrEmpty(this.TipoEndereco);
-
-
+                !string.IsNullOrEmpty(this.Pais);
 
 
             return isValid;
