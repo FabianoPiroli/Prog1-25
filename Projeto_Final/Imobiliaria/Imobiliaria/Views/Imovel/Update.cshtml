@@ -78,9 +78,12 @@
                 <div class="mb-3">
                     <label class="form-label">Foto do Imóvel:</label>
                     <input type="file" name="Imagem" class="form-control" />
+                    <input type="hidden" name="CaminhoImagem" value="@Model.CaminhoImagem" />
                     @if (!string.IsNullOrEmpty(Model.CaminhoImagem))
                     {
-                        <img src="@Model.CaminhoImagem" alt="Imagem atual" class="img-thumbnail mt-2" width="200" />
+						    <p class="mt-2 mb-0">Imagem atual:</p>
+                            <img src="@Model.CaminhoImagem" alt="Imagem atual" class="img-thumbnail mt-2" width="200" />
+                        
                     }
 
                 </div>

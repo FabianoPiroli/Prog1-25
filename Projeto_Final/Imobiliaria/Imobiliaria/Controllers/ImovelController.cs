@@ -71,7 +71,7 @@ namespace Imobiliaria.Controllers
         {
             var lista = _imovelRepository.RetrieveAll();
             var linhas = lista.Select(i =>
-                $"\"{i.Nome}\";\"{i.Endereco.Logradouro}\";\"{i.Endereco.Referencia}\";\"{i.Endereco.Cidade}\";\"{i.Endereco.Estado}\";\"{i.Endereco.CEP}\";\"{i.Endereco.Pais}\";\"Quartos: {i.Quartos}\";\"Vagas: {i.VagasGaragem}\";\"Banheiros: {i.Banheiros}\";\"{i.Descricao}\";\"{categorias.First(c => c.Id == i.CategoriaId).Nome}\""
+                $"{i.Nome}; {i.Endereco.Logradouro}; {i.Endereco.Referencia}; {i.Endereco.Cidade}; {i.Endereco.Estado}; {i.Endereco.CEP}; {i.Endereco.Pais}; Quartos: {i.Quartos}; Vagas: {i.VagasGaragem}; Banheiros: {i.Banheiros}; {i.Descricao}; {categorias.First(c => c.Id == i.CategoriaId).Nome}\n"
             ).ToList();
 
             string caminho = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imoveis.txt");
@@ -99,6 +99,17 @@ namespace Imobiliaria.Controllers
             if (id is null || id <= 0)
                 return NotFound();
 
+            var imovel = _imovelRepository.Retrieve(id.Value);
+            if (imovel == null)
+                return NotFound();
+
+            if (!string.IsNullOrEmpty(imovel.CaminhoImagem))
+            {
+                var caminhoFisico = Path.Combine(enviroment.WebRootPath, imovel.CaminhoImagem.TrimStart('/').Replace('/', Path.DirectorySeparatorChar));
+                if (System.IO.File.Exists(caminhoFisico))
+                    System.IO.File.Delete(caminhoFisico);
+            }
+
             if (_imovelRepository.DeleteById(id.Value))
             {
                 TempData["MensagemSucesso"] = "Imóvel excluído com sucesso!";
@@ -125,10 +136,18 @@ namespace Imobiliaria.Controllers
         }
 
         [HttpPost]
-        public IActionResult ConfirmUpdate(Imovel imovel, IFormFile Imagem)
+        public IActionResult ConfirmUpdate(Imovel imovel, IFormFile Imagem, string CaminhoImagem)
         {
             if (Imagem != null && Imagem.Length > 0)
             {
+
+                if (!string.IsNullOrEmpty(CaminhoImagem))
+                {
+                    var caminhoFisicoAntigo = Path.Combine(enviroment.WebRootPath, CaminhoImagem.TrimStart('/').Replace('/', Path.DirectorySeparatorChar));
+                    if (System.IO.File.Exists(caminhoFisicoAntigo))
+                        System.IO.File.Delete(caminhoFisicoAntigo);
+                }
+
                 var nomeArquivo = Guid.NewGuid().ToString() + Path.GetExtension(Imagem.FileName);
                 var caminhoPasta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens");
                 Directory.CreateDirectory(caminhoPasta);
@@ -140,6 +159,10 @@ namespace Imobiliaria.Controllers
                 }
 
                 imovel.CaminhoImagem = "/imagens/" + nomeArquivo;
+            }
+            else
+            {
+                imovel.CaminhoImagem = CaminhoImagem;
             }
 
             imovel.Categoria = categorias.FirstOrDefault(c => c.Id == imovel.CategoriaId);

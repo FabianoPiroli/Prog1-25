@@ -1,5 +1,10 @@
-"Mansão";"Rua dos Passos";"Próximo a Igreja";"Videira";"SC";"89562-068";"Brasil";"Quartos: 7";"Vagas: 7";"Banheiros: 9";"Mansão luxuosa com piscina.";"Casa"
-"Casa";"Josefina Henn";"Próximo a Igreja São Cristóvão";"Videira";"SC";"89562-068";"Brasil";"Quartos: 4";"Vagas: 3";"Banheiros: 3";"Casa de Esquina com dois andares.";"Casa"
-"Apartamento Cobertura";"Saul Brandalise";"Bradesco";"Videira";"SC";"8956-000";"Brasil";"Quartos: 4";"Vagas: 2";"Banheiros: 4";"Apartamento alto padrão na cobertura do edifício Trindade";"Apartamento"
-"Sítio no Interior";"Linha Baroncello";"VT";"Videira";"SC";"8956-000";"Brasil";"Quartos: 5";"Vagas: 4";"Banheiros: 6";"Lindo sítio no interior de Videira.";"Sítio"
-"Sala Comercial";"Jorge Campos";"Dentro do shopping Brasil";"Videira";"SC";"8956-000";"Brasil";"Quartos: 1";"Vagas: 1";"Banheiros: 1";"Sala comercial para alugar no centro, situada dentro do shopping";"Sala Comercial"
+ Mansão; Rua dos Passos; Próximo a Igreja; Videira; SC; 89562-068; Brasil; Quartos: 7; Vagas: 7; Banheiros: 9; Mansão luxuosa com piscina.; Casa
+
+ Casa; Josefina Henn; Próximo a Igreja São Cristóvão; Videira; SC; 89562-068; Brasil; Quartos: 4; Vagas: 3; Banheiros: 3; Casa de Esquina com dois andares.; Casa
+
+ Apartamento Cobertura; Saul Brandalise; Bradesco; Videira; SC; 8956-000; Brasil; Quartos: 4; Vagas: 2; Banheiros: 4; Apartamento alto padrão na cobertura do edifício Trindade; Apartamento
+
+ Sítio no Interior; Linha Baroncello; VT; Videira; SC; 8956-000; Brasil; Quartos: 5; Vagas: 4; Banheiros: 6; Lindo sítio no interior de Videira.; Sítio
+
+ Sala Comercial; Jorge Campos; Dentro do shopping Brasil; Videira; SC; 8956-000; Brasil; Quartos: 1; Vagas: 1; Banheiros: 1; Sala comercial para alugar no centro, situada dentro do shopping; Sala Comercial
+
